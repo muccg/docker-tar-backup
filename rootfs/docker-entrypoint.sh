@@ -1,21 +1,18 @@
 #!/bin/bash
 
 # name of output file
-: ${NAME:="backup"}
+: "${NAME:=backup}"
 
 # By default we don't encrypt
-: ${ENCRYPT:="no"}
+: "${ENCRYPT:=no}"
 
 # Set this to your encrypt password
-: ${ENCRYPT_PASSWORD:="unset"}
+: "${ENCRYPT_PASSWORD:=unset}"
 
 # Set this to your list of tar exclude patterns
-: ${EXCLUDE_PATTERN_FILE:="/dev/null"}
+: "${EXCLUDE_PATTERN_FILE:=/dev/null}"
  
 ######################################
-
-echo "HOME is ${HOME}"
-echo "WHOAMI is `whoami`"
 
 if [ "$1" = 'backup' ]; then
     echo "[Run] Starting backup"
@@ -34,6 +31,6 @@ if [ "$1" = 'backup' ]; then
 fi
 
 echo "[RUN]: Builtin command not provided [backup]"
-echo "[RUN]: $@"
+echo "[RUN]: $*"
 
 exec "$@"

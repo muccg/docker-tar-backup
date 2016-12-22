@@ -1,0 +1,10 @@
+version: '2'
+services:
+
+  tar-backup:
+    image: muccg/tar-backup
+    environment:
+      - ENCRYPT_PASSWORD=insecure
+    volumes:
+      - "./data/backup:/backup"
+      - "./data/output:/output"

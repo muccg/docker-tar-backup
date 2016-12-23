@@ -11,4 +11,4 @@ Makes use of [rotate-backups.py](https://github.com/adamfeuer/rotate-backups).
 
 ## Example usage
 
-docker run -e 'ENCRYPT_PASSWORD=XXXXX' -e NAME='some_name -v /path/to/backup:/backup -v /some/output/path:/output -it muccg/tar-backup:latest
+docker run -e 'ENCRYPT_PASSWORD=XXXXX' -e NAME='some_name' -v /path/to/backup:/backup -v /some/output/path:/output -it muccg/tar-backup:latest

@@ -1,12 +1,12 @@
-#
-FROM muccg/python-base:debian8-2.7
+FROM muccg/python-base:2.7-alpine
 MAINTAINER https://github.com/muccg/
 
-COPY docker-entrypoint.sh /
-COPY rotate-backups.py /
-COPY rotate-backups.conf /etc/default/rotate-backups
+RUN apk add --no-cache \
+    bash \
+    openssl \
+    tar
 
-RUN chmod +x /docker-entrypoint.sh /rotate-backups.py
+COPY rootfs/ /
 
 RUN mkdir /working
 
